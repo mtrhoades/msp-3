@@ -3,9 +3,9 @@ const express = require('express');
 const cors = require('cors');
 
 // config
+const app = express();
 require('dotenv').config();
 const PORT = process.env.PORT;
-const app = express();
 
 
 // middleware
@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 
 // controller routes
     // resister and login routes
-app.use('/auth', require('./controllers/jwtAuth'))
+app.use('/auth', require('./controllers/jwtAuth'));
 
 // server listen
 app.listen(PORT, () => {

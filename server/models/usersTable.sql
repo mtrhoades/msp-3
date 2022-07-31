@@ -9,9 +9,9 @@
     );
 
 
-
+-- Insert seed data (fake users)
 INSERT INTO Users (email, firstName, lastName, passwordDigest, roles) VALUES ('stan@crazymail.com', 'Stan', 'Stanton', '1234', 'Manager');
 
 
 
--->        psql --host=ec2-44-206-197-71.compute-1.amazonaws.com --port=5432 --username=anuolcrzualnmb --password --dbname=d2lvnbf6ipvkib
+-->        psql --host=ec2-34-193-44-192.compute-1.amazonaws.com --port=5432 --username=wcbkbmkoxzutux --password --dbname=dfl7shtsg0hv9q
