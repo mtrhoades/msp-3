@@ -31,6 +31,8 @@ app.get('/', (req, res) => {
 // controller routes
     // resister and login routes
 app.use('/auth', require('./controllers/jwtAuth'));
+app.use('/inventory', require('./controllers/inventory'));
+
 
 
 // catch all route
