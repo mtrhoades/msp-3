@@ -11,7 +11,7 @@ const AddInventory = () => {
     // useState section
 const [show, setShow] = useState(false);
 
-const [item, setItem] = useState('');
+const [itemname, setItemname] = useState('');
 const [category, setCategory] = useState('')
 const [supplier, setSupplier] = useState('')
 const [uniteach, setUniteach] = useState('')
@@ -29,7 +29,7 @@ const handleShow = () => setShow(true); // opening the modal
 const onSubmitForm = async(e) => {
 e.preventDefault();
 try {
-    const body = { item, category, supplier, uniteach, paronhand };
+    const body = { itemname, category, supplier, uniteach, paronhand };
     const response = await fetch("http://localhost:3070/inventory", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -66,8 +66,8 @@ try {
                 class="form-control form-control-sm"
                 id="item"
                 placeholder='Enter inventory item here...'
-                value={ item } 
-                onChange={e => setItem(e.target.value)}
+                value={ itemname } 
+                onChange={e => setItemname(e.target.value)}
               >
               </input>
             </div>

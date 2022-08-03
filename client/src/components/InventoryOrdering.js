@@ -1,6 +1,7 @@
 // imports/dependencies
 import React, { useState, useEffect } from 'react';
-import AddInventory from './AddInventory'
+import AddInventory from './AddInventory';
+import EditOrderAmount from './EditOrderAmount'
 
 
 // functional component
@@ -9,7 +10,7 @@ const InventoryOrdering = () => {
 
     // useState section:
 const [ items, setItems] = useState([]);
-const [ orderAmount, setOrderAmounts] = useState('');
+const [ orderamount, setOrderamount] = useState('');
 
 
 // helper functions:
@@ -35,7 +36,20 @@ useEffect(() => {
 },[])
 
 
+// delete item function fetch request:
+const deleteItem = async (id) => {
+    try {
+        await fetch(`http://localhost:3070/inventory/${id}`, {
+            method: 'DELETE'
+        });
     
+        setItems(items.filter(item => item.item_id !== id)); 
+
+    } catch (err) {
+        console.error(err.message)
+    }
+};
+
 
 
   return (
@@ -57,22 +71,19 @@ useEffect(() => {
             <tbody class="listItems">
                 {items.map(item => (
                     <tr key={item.item_id}>
-                        <td>{item.item}</td>
+                        <td>{item.itemname}</td>
                         <td>{item.category}</td>
                         <td>{item.supplier}</td>
                         <td>{item.paronhand}</td>
                         <td>{item.uniteach}</td>
-
-                        <td style={{width: '150px', paddingLeft: '10px'}}>
-                            <input 
-                                type="number"
-                                class="form-control form-control-sm"
-                                id='orderAmount'
-                                value={orderAmount}
-                                onChange={e => setOrderAmounts(e.target.value)}
-                                >
-                            </input>
-                        </td>
+                        <td>{item.orderamount}</td>
+                        <td><EditOrderAmount item={item} /></td>
+                        <button
+                            onClick={() => deleteItem(item.item_id)}
+                            type="button"
+                            class="btn btn-outline-danger btn-sm options">
+                            Delete
+                        </button>
 
                     </tr>
                 ))}

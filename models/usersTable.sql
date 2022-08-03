@@ -9,12 +9,12 @@
     );
 
  CREATE TABLE inventory (
-    inventory_id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
-    category varchar(255) NOT NULL,
-    item varchar(255) NOT NULL,
-    supplier varchar(255) NOT NULL,
-    unitEach varchar(255) NOT NULL,
-    parOnHand integer NOT NULL
+    item_id SERIAL PRIMARY KEY,
+    category varchar(255),
+    item varchar(255),
+    supplier varchar(255),
+    unitEach varchar(255),
+    parOnHand integer
     );
 
 -- Insert seed data (fake users)
