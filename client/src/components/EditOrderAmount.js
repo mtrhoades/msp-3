@@ -148,7 +148,7 @@ try {
                   data-dismiss="modal"
                   onClick={e => updateItem(e)}
               >
-                      Edit
+                    Submit
               </button>
             </div>
       </Modal>

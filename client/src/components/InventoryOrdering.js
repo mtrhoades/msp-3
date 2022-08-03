@@ -65,7 +65,8 @@ const deleteItem = async (id) => {
                     <th scope="col">Supplier</th>
                     <th scope="col">Par on Hand</th>
                     <th scope="col">Unit Each</th>  
-                    <th scope="col">Order Amount (cases)</th>    
+                    <th scope="col">Order Amount (cases)</th>
+                    <th scope="col">Options</th>    
                 </tr>
             </thead>
             <tbody class="listItems">
@@ -77,14 +78,14 @@ const deleteItem = async (id) => {
                         <td>{item.paronhand}</td>
                         <td>{item.uniteach}</td>
                         <td>{item.orderamount}</td>
-                        <td><EditOrderAmount item={item} /></td>
-                        <button
-                            onClick={() => deleteItem(item.item_id)}
-                            type="button"
-                            class="btn btn-outline-danger btn-sm options">
-                            Delete
-                        </button>
-
+                        <td style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}><EditOrderAmount item={item} /> 
+                            <button
+                                onClick={() => deleteItem(item.item_id)}
+                                type="button"
+                                class="btn btn-outline-danger btn-sm options">
+                                Delete
+                            </button>
+                        </td>
                     </tr>
                 ))}
             </tbody>
