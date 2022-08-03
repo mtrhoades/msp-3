@@ -49,7 +49,7 @@ try {
   return (
     <div>
         <Button variant="success" onClick={handleShow}>
-        Add Stock
+        Add Item
         </Button>
       
       <Modal show={show} onHide={handleClose}>
