@@ -1,3 +1,110 @@
 * {
-    padding: .5rem;
+    padding: 0rem;
 }
+
+body {
+    font-family: "Raleway", sans-serif;
+    background-image: url("./background.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+.entry {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 30vw;
+  height: 70vh;
+  padding-bottom: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  /* box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37); */
+  backdrop-filter: blur(8.5px);
+  border-radius: 10px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+}
+
+.loginContainer {
+  padding-left: 1000px;
+}
+
+.welcomeContainer {
+  margin: 3rem 0 2rem 0;
+  height: 90px;
+}
+
+.input{
+    background: rgba(255,255,255,0.15);
+    box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+    border-radius: 2rem;
+    width: 60%;
+    height: 3rem;
+    padding: 1rem;
+    border: none;
+    outline: none;
+    color: #3c354e;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 5.5px;
+  }
+
+  .input:focus{
+    display: inline-block;
+    box-shadow: 0 0 0 0.2rem #b9abe0;
+    backdrop-filter: blur(12rem);
+    border-radius: 2rem;
+  }
+  
+  .input::placeholder{
+    color: whitesmoke;
+    font-weight: 100;
+    font-size: 1rem;
+  }
+
+  .first {
+    margin-bottom: 60px;
+  }
+
+.styledButton {
+  background:  #03b4e0;
+  /* background: linear-gradient(to right, #03b4e0 0%, #2153ea 79%); */
+  text-transform: uppercase;
+  text-align: center;
+  padding: 3.3%;
+  letter-spacing: 0.2rem;
+  /* width: 65%; */
+  height: 3rem;
+  color: white;
+  border-radius: 2rem;
+  cursor: pointer;
+  margin: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.styledButton:hover{
+  color: rgb(255, 255, 255);
+}
+
+.loginButton {
+  margin-top: 80px;
+}
+
+.buttonSmall {
+  font-size: 10px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+}
+
+a:link, a:visited, a:hover, a:active{
+  text-decoration: none;
+}
+
